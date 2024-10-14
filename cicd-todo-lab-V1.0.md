@@ -140,31 +140,34 @@ test('adds a todo when clicking the Add Todo button', () => {
 
 1. ใน GitHub repository, ไปที่แท็บ "Actions"
 2. คลิก "New workflow"
-3. เลือก "Node.js" จากรายการ template
+3. เลือกกลุ่ม CI และเลือก "Node.js"  ตั้งชื่อไฟล์เป็น ci.yml
 4. แก้ไข workflow file ให้เป็นดังนี้:
 
 ```yaml
-name: CI
+   name: CI
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+   on:
+     push:
+       branches: [ main ]
+     pull_request:
+       branches: [ main ]
 
-jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
+   jobs:
+     build-and-test:
+       runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14.x'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+       steps:
+       - uses: actions/checkout@v2
+       - name: Use Node.js
+         uses: actions/setup-node@v2
+         with:
+           node-version: '14.x'
+       - name: Install dependencies
+         run: npm ci
+       - name: Build
+         run: npm run build --if-present
+       - name: Test
+         run: npm test
 ```
 
 5. คลิก "Start commit" และ "Commit new file"
