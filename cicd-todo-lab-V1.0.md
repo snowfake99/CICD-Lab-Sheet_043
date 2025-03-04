@@ -27,7 +27,11 @@
      ```
      git --version
      ```
-
+   2.1 เปิด Command Line หรือ Terminal และตั้งค่า Git:
+```bash
+   git config --global user.name "ชื่อของคุณ"
+   git config --global user.email "อีเมลที่ใช้สมัคร GitHub"
+```
 3. สร้างบัญชี GitHub:
    - ไปที่ https://github.com/ และสร้างบัญชีใหม่หากยังไม่มี
 
