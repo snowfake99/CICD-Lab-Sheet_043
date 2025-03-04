@@ -65,7 +65,8 @@
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/yourusername/todo-cicd.git
+   # https://github.com/yourusername/todo-cicd.git  ต้องเปลี่ยนเป็น GitRepository ที่สร้างขึ้นมา
+   git remote add origin https://github.com/xxx-yourusername-xxx/todo-cicd.git
    git push -u origin main
    ```
 
